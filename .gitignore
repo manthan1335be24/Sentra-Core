@@ -8,9 +8,9 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Dependencies
-node_modules
-dist
-dist-ssr
+node_modules/
+dist/
+dist-ssr/
 *.local
 
 # Environment
@@ -19,8 +19,8 @@ dist-ssr
 .env.*.local
 
 # IDE
-.vscode
-.idea
+.vscode/
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
@@ -29,14 +29,13 @@ dist-ssr
 *.sw?
 
 # Python
-__pycache__
+__pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
@@ -53,17 +52,15 @@ MANIFEST
 venv/
 ENV/
 env/
-.venv
+.venv/
 
 # Backend rules cache
 backend/engine/rules/
 *.yar
 
-# macOS
+# OS files
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# Windows
 Thumbs.db
 ehthumbs.db
