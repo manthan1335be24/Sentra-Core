@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Default: Sentra Classic (Cyan) */
+  :root {
+    --sentra-accent: #06b6d4;
+    --sentra-bg: #050505;
+    --sentra-glass: rgba(10, 10, 10, 0.7);
+  }
+
+  /* Theme 2: Toxic Heuristics (Green) */
+  .theme-green {
+    --sentra-accent: #22c55e;
+    --sentra-bg: #020502;
+    --sentra-glass: rgba(5, 15, 5, 0.7);
+  }
+
+  /* Theme 3: Red Alert (Crimson) */
+  .theme-red {
+    --sentra-accent: #ef4444;
+    --sentra-bg: #050101;
+    --sentra-glass: rgba(15, 5, 5, 0.7);
+  }
+
+  /* Theme 4: Ghost Glass (Silver) */
+  .theme-silver {
+    --sentra-accent: #e2e8f0;
+    --sentra-bg: #0f1115;
+    --sentra-glass: rgba(20, 25, 30, 0.7);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  * {
+    @apply transition-colors duration-300;
+  }
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--sentra-accent);
+  border-radius: 10px;
+  opacity: 0.5;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+}
+
+/* Firefox scrollbar */
+.custom-scrollbar {
+  scrollbar-color: var(--sentra-accent) transparent;
+  scrollbar-width: thin;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px var(--sentra-accent); }
+  50% { box-shadow: 0 0 40px var(--sentra-accent); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Utility classes */
+.truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.glow-sentra {
+  box-shadow: 0 0 20px var(--sentra-accent);
+}
+
+.glass-effect {
+  background: var(--sentra-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Responsive utilities */
+@media (max-width: 1024px) {
+  .grid-responsive {
+    @apply grid-cols-1;
+  }
+}
